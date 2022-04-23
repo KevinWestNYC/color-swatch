@@ -27,7 +27,7 @@ Keep track of how much time you spent on the challenge but also feel free to spe
 
 
 ## Core Goals
-- Replicate design
+- Replicate design 
   - [Font](./FONT.md)
   - Styles
   - Iconography
