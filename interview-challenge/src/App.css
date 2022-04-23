@@ -113,11 +113,14 @@
   border: 1px solid #FDFDFD;
   border-radius: 10px;
   box-shadow: 0px 0px 6px RGBA(0, 0, 0, 0.25);
-  background-color: #FDFDFD
+  background-color: #FDFDFD;
+  cursor:pointer;
+
 }
 
 .color-card-swatch{
   height: 208.42px;
+  border-bottom: 1px solid #f7f7f7;
   border-radius: 9px 9px 0px 0px;
 }
 
@@ -127,6 +130,7 @@
 }
 .large-color-card-swatch{
   height: 550px;
+  border-bottom: 1px solid #f7f7f7;
   border-radius: 9px 9px 0px 0px;
 }
 
@@ -139,6 +143,7 @@
 }
 .gradient-color-card-swatch{
   height: 109px;
+  border-bottom: 1px solid #f7f7f7;
   border-radius: 9px 9px 0px 0px;
 }
 
@@ -173,7 +178,8 @@
 }
 
 .pagination-buttons{
-  margin-top: 90.9px;
+  margin-top: 81px;
+  margin-bottom: 59px;
   font-size: 24px;
 }
 
