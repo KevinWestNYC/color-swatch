@@ -1,25 +1,20 @@
 import React from 'react'
 
-export default function SideBar() {
-//random color
-  // const setBg = () => {
-  //   const randomColor = Math.floor(Math.random()*16777215).toString(16);
-  //   document.body.style.backgroundColor = "#" + randomColor;
-  //   color.innerHTML = "#" + randomColor;
-  // }
+export default function SideBar({ randomButtonClicked, setRandomButtonClicked, setPrimaryColor }) {
+
 
   return (
     <div className="sidebar">
-        <button className="random-color-button">Random Color</button>
+        <button className="random-color-button" onClick={()=> setRandomButtonClicked(randomButtonClicked + 1)}>Random Color</button>
         <ul className="color-buttons-list">
-            <li className="button-list-item">Red</li>
-            <li className="button-list-item">Orange</li>
-            <li className="button-list-item">Yellow</li>
-            <li className="button-list-item">Green</li>
-            <li className="button-list-item">Blue</li>
-            <li className="button-list-item">Purple</li>
-            <li className="button-list-item">Brown</li>
-            <li className="button-list-item">Grey</li>
+            <li className="button-list-item" onClick={() => setPrimaryColor("#FF0000")}>Red</li>
+            <li className="button-list-item" onClick={() => setPrimaryColor("#FFA500")}>Orange</li>
+            <li className="button-list-item" onClick={() => setPrimaryColor("#FFFF00")}>Yellow</li>
+            <li className="button-list-item" onClick={() => setPrimaryColor("#00FF00")}>Green</li>
+            <li className="button-list-item" onClick={() => setPrimaryColor("#0000FF")}>Blue</li>
+            <li className="button-list-item" onClick={() => setPrimaryColor("#6a0dad")}>Purple</li>
+            <li className="button-list-item" onClick={() => setPrimaryColor("#964B00")}>Brown</li>
+            <li className="button-list-item" onClick={() => setPrimaryColor("#808080")}>Grey</li>
         </ul>
     </div>
   )

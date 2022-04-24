@@ -1,14 +1,23 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { tint, shade } from "tint-shade-color";
 
 export default function DetailView({ onClear, mainColor }) {
-//   const [largeSwatchColor, setLargeSwatchColor] = useState("");
-  const [gradientDetailCards, setGradientDetailCards] = useState([
-    "#CFFFF1",
-    "#CFFFF1",
-    mainColor,
-    "#CFFFF1",
-    "#CFFFF1",
-  ]);
+  const [gradientDetailCards, setGradientDetailCards] = useState([]);
+
+  const createColorArray = () => {
+    let gradientCardArray = [
+      shade(mainColor, 0.45),
+      shade(mainColor, 0.2),
+      mainColor,
+      tint(mainColor, 0.4),
+      tint(mainColor, 0.65),
+    ];
+      setGradientDetailCards(gradientCardArray);
+  };
+
+  useEffect(() => {
+    createColorArray();
+  }, [mainColor]);
 
   return (
     <div className="detail-view-page">
@@ -24,24 +33,20 @@ export default function DetailView({ onClear, mainColor }) {
         </div>
       </div>
       <div className="gradient-detail-card-container">
-        {gradientDetailCards.map((gradientDetailCard) => (
-          <div className="gradient-detail-card">
-            <div
-              className="gradient-color-card-swatch"
-              style={{ backgroundColor: gradientDetailCard }}
-            ></div>
-            <div className="gradient-color-card-title">
-              <p>{gradientDetailCard}</p>
+        {gradientDetailCards &&
+          gradientDetailCards.map((gradientDetailCard) => (
+            <div key={gradientDetailCard}className="gradient-detail-card">
+              <div
+                className="gradient-color-card-swatch"
+                style={{ backgroundColor: gradientDetailCard }}
+              ></div>
+              <div className="gradient-color-card-title">
+                <p>{gradientDetailCard}</p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
       </div>
-      <button 
-      className="clear-button" 
-    //   onClick={() => setMainColor("")}
-      onClick={onClear}
-
-      >
+      <button className="clear-button" onClick={onClear}>
         Clear
       </button>
     </div>

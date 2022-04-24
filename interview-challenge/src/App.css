@@ -177,10 +177,19 @@
   flex-wrap: wrap;
 }
 
-.pagination-buttons{
+.pagination-button-container{
   margin-top: 81px;
   margin-bottom: 59px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 21px;
   font-size: 24px;
+}
+
+.pagination-button{
+  cursor: pointer;
 }
 
 .main-detail-card{
