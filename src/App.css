@@ -27,6 +27,8 @@
   min-width: 320px;
 }
 
+.content-pages{}
+
 .navbar {
   display: flex;
   flex-direction:row;
@@ -200,6 +202,8 @@
   justify-content: space-between;
   gap:41px;
   width: 100%;
+  flex-wrap: wrap;
+
 }
 
 .gradient-detail-card{

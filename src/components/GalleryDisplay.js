@@ -36,7 +36,7 @@ export default function GalleryDisplay({ onColorChange }) {
       </div>
       <div className="pagination-button-container">
             {totalPagesArray.map((p) => (
-              <p key={p} className="pagination-button" onClick={()=> setPage(p)}>{p}</p>
+              <p key={p} className="pagination-button" style={page == p ? {textDecoration:"underline"} : {}} onClick={()=> setPage(p)}>{p}</p>
               ))}
               </div>
     </div>
