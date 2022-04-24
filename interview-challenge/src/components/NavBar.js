@@ -5,7 +5,7 @@ export default function NavBar() {
   return (
     <div className="navbar">
         <div className="logo-container">
-          <a href="https://www.helpfulhuman.com/">
+          <a href="https://www.helpfulhuman.com/" target="_blank">
             <img src={logoSymbol} alt="HH Icon" className="hh-icon"/>
             </a>
         </div>

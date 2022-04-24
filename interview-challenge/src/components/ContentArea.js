@@ -24,7 +24,7 @@ export default function ContentArea({ primaryColor, randomButtonClicked }) {
     <div className="content-area">
       <div className="content-pages">
         {mainColor ? (
-          <DetailView mainColor={mainColor} onClear={() => setMainColor("")} />
+          <DetailView mainColor={mainColor} onClear={() => setMainColor("")} onColorChange={(color) => setMainColor(color)}/>
         ) : (
           <GalleryDisplay onColorChange={(color) => setMainColor(color)} />
         )}

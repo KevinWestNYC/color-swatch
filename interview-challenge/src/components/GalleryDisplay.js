@@ -3,7 +3,7 @@ import ColorCard from "./ColorCard";
 import colors from "../data/colors.json"
 
 
-export default function GalleryDisplay({ mainColor, setMainColor, onColorChange }) {
+export default function GalleryDisplay({ onColorChange }) {
   const [page, setPage] = useState(1)
   const [allColors, setAllColors] = useState(colors);
   const [currentColors, setCurrentColors] = useState([]);
@@ -29,7 +29,7 @@ export default function GalleryDisplay({ mainColor, setMainColor, onColorChange 
           currentColors.map((color) => (
             <ColorCard
               key={color.name}
-              color={color.hex}                
+              color={color.hex}
               onClick={() => onColorChange(color.hex)}
             />
           ))}

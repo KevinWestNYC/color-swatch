@@ -35,7 +35,7 @@ export default function DetailView({ onClear, mainColor }) {
       <div className="gradient-detail-card-container">
         {gradientDetailCards &&
           gradientDetailCards.map((gradientDetailCard) => (
-            <div key={gradientDetailCard}className="gradient-detail-card">
+            <div key={gradientDetailCard} className="gradient-detail-card">
               <div
                 className="gradient-color-card-swatch"
                 style={{ backgroundColor: gradientDetailCard }}
