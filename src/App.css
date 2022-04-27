@@ -149,6 +149,7 @@
   text-align: left;
   margin-top: 40px;
   margin-left: 45px;
+  max-width: 250px;
   color: #363D3D;
   width: fit-content
 }
