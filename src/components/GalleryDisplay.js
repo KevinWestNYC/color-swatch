@@ -11,12 +11,18 @@ export default function GalleryDisplay({ onColorChange }) {
   let totalPagesArray = Array.from({length: (Math.floor(allColors.length / cardsPerPage))}, (_, i) => i + 1)
   
   const displayCurrentPage = (page) => {
-    page == 1 ? setCurrentColors(allColors.slice(0,12)) :
-    setCurrentColors(allColors.slice(0,12))
     let start = cardsPerPage * (page - 1) + (page-1);
     let end = cardsPerPage * page + (page-1);
+    page == 1 ? setCurrentColors(allColors.slice(0,cardsPerPage)) :
     setCurrentColors(allColors.slice(start,end))
   }
+
+  // const filterSearchedColor = (word) => {
+  //   word.charAt(0) === "#" ?
+  //   setAllColors(allColors.filter((color) => color.hex === word)) :
+  //   setAllColors(allColors.filter((color) => (color.name).toLowerCase().includes(word.toLowerCase())))
+  //   console.log(`Searching ${word} CONTENT`)
+  // }
 
   useEffect(() =>{
     displayCurrentPage(page)
@@ -30,7 +36,11 @@ export default function GalleryDisplay({ onColorChange }) {
             <ColorCard
               key={color.name}
               color={color.hex}
-              onClick={() => onColorChange(color.hex)}
+              name={color.name}
+              onClick={() => {
+                onColorChange(color.hex, color.name)
+              
+              }}
             />
           ))}
       </div>

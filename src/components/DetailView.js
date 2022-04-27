@@ -1,8 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { tint, shade } from "tint-shade-color";
 
-export default function DetailView({ onClear, mainColor }) {
+export default function DetailView({ onClear, mainColor, mainColorName }) {
   const [gradientDetailCards, setGradientDetailCards] = useState([]);
+  const [nameVisibility, setNameVisibility] = useState("hidden");
+  const [hexVisibility, setHexVisibility] = useState("visible");
+  const showName = (e) => {
+    e.preventDefault();
+    setHexVisibility("hidden");
+    setNameVisibility("visible");
+  };
+
+  const showHex = (e) => {
+    e.preventDefault();
+    setHexVisibility("visible");
+    setNameVisibility("hidden");
+  };
 
   const createColorArray = () => {
     let gradientCardArray = [
@@ -12,7 +25,7 @@ export default function DetailView({ onClear, mainColor }) {
       tint(mainColor, 0.4),
       tint(mainColor, 0.65),
     ];
-      setGradientDetailCards(gradientCardArray);
+    setGradientDetailCards(gradientCardArray);
   };
 
   useEffect(() => {
@@ -27,8 +40,16 @@ export default function DetailView({ onClear, mainColor }) {
             className="large-color-card-swatch"
             style={{ backgroundColor: mainColor }}
           ></div>
-          <div className="large-color-card-title">
-            <p>{mainColor}</p>
+          <div
+            className="large-color-card-title"
+            onMouseEnter={(e) => showName(e)}
+            onMouseLeave={(e) => showHex(e)}
+          >
+            {hexVisibility === "visible" ? (
+              <p style={{ visibility: hexVisibility }}>{mainColor}</p>
+            ) : (
+              <p className="color-card-name" style={{ visibility: nameVisibility }}>{mainColorName}</p>
+            )}
           </div>
         </div>
       </div>
