@@ -14,15 +14,18 @@ export default function ContentArea({ primaryColor, randomButtonClicked }) {
   };
 
   const getColorName = async (name) => {
+    
     let response = await fetch(
       `https://www.thecolorapi.com/id?hex=${name.replace("#", "")}`
-    );
-    let jsonData = await response.json();
+      );
+      let jsonData = await response.json();
+      name &&
     setMainColorName(jsonData.name.value);
   };
 
   useEffect(() => {
     setMainColor(primaryColor);
+    getColorName(primaryColor)
   }, [primaryColor]);
 
   useEffect(() => {
