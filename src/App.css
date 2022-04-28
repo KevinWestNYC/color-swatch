@@ -149,10 +149,17 @@
   text-align: left;
   margin-top: 40px;
   margin-left: 45px;
-  max-width: 250px;
+  /* max-width: 250px; */
   color: #363D3D;
   width: fit-content
 }
+
+@media screen and (max-width: 730px) {
+  div.large-color-card-title {
+    max-width: 275px;
+  }
+}
+
 .gradient-color-card-swatch{
   height: 109px;
   border-bottom: 1px solid #f7f7f7;
